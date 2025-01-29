@@ -57,7 +57,7 @@ function App() {
                 {displayData()}
                 {/* Display username and add sign-out button */}
                 <div className="user-info">
-                  <span>Welcome, {username}!</span>
+                  
                   
                 </div>
               </main>
