@@ -94,10 +94,11 @@ const AuthStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height for vertical centering */
+  height: 100vh;
+  width: 100vw; /* Ensure full viewport width */
   background: linear-gradient(135deg, #e1bee7, #c5cae9);
 
-  /* Auth form styles */
+  /* Centering the form */
   .auth-form {
     background: #fff;
     padding: 2rem;
@@ -105,72 +106,86 @@ const AuthStyled = styled.div`
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 100%;
-    max-width: 400px; /* Restrict the maximum width */
-    box-sizing: border-box; /* Ensure padding doesn't exceed the width */
+    max-width: 400px; /* Limit form size */
+    box-sizing: border-box; /* Ensure padding is part of width */
     transition: all 0.3s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Perfect centering */
+  }
 
-    /* Form heading */
-    h2 {
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: #333;
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .error {
+    color: #ff4d4d;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+    &:focus {
+      border-color: #4caf50;
+      outline: none;
+      box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #4caf50;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
     }
 
-    /* Error message styles */
-    .error {
-      color: #ff4d4d;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-      font-weight: 500;
+    &:active {
+      transform: scale(0.98);
     }
+  }
 
-    /* Input field styles */
-    input {
-      width: 100%;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      font-size: 1rem;
-      transition: all 0.3s ease;
+  .toggle {
+    color: #007bff;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: underline;
+    font-size: 0.95rem;
+  }
 
-      &:focus {
-        border-color: #4caf50;
-        outline: none;
-        box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
-      }
-    }
+  .logout-btn {
+    background-color: #d9534f;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 
-    /* Button styles */
-    button {
-      width: 100%;
-      padding: 1rem;
-      background-color: #4caf50;
-      color: white;
-      font-size: 1.1rem;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-
-      &:hover {
-        background-color: #45a049;
-        transform: scale(1.05);
-      }
-
-      &:active {
-        transform: scale(0.98);
-      }
-    }
-
-    /* Toggle link styles */
-    .toggle {
-      color: #007bff;
-      cursor: pointer;
-      margin-top: 10px;
-      text-decoration: underline;
-      font-size: 0.95rem;
+    &:hover {
+      background-color: #c9302c;
     }
   }
 `;
